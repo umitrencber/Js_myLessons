@@ -1,4 +1,4 @@
-var sayi = 7, result = sayi;
+var sayi = 5, result = sayi;
 
 if(sayi != 0){
     for(let i=1; i<result; i++)
