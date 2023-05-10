@@ -1,0 +1,17 @@
+statement -> ifade (; kadar olan kod bloğu)
+identifier -> tanımlayıcı
+slice -> dilimlemek
+--------------------------------------------------------------
+05/05/2023 -> çarşamba 10.09
+verify -> doğrulamak
+peek -> dikizlemek,gözetlemek
+comparasion -> karşılaştırma
+logical -> mantıksal
+comparasion and logical operators:
+switch -> şalter,anahtar
+case -> durum,olay
+break -> kırmak -> zaman kaybetmemek için hız hız
+06/05/2023
+label -> etiket
+
+

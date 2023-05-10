@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 style="color: rgb(247, 2, 2);">String Metodları</h3>
+
+    
+    <script>
+        StringMetods();
+        // indexof and lastindexof
+    function StringMetods(){
+        var text = "Ümit,MEHMET,Mehmet,Ayşe,Kazım,Lale,Mehmet,MEHMET";
+        document.write("<br> İLK HALİ : "+text+"<br>");
+
+        document.write(" <h4>indexOf , lastIndexOf ve search() metodları: </h4> ");
+        document.write(text.indexOf("Mehmet")); // -> 0'dan saymaya başlar ve ilk Mehmet'in indexini verir
+        document.write("<br>"+text.lastIndexOf("Mehmet")); // 2+ ise aynı kelime en sonuncunun indexini verir.
+        document.write("<br>"+text.search("Mehmet")); // ikinci parametre almaz ve daha güçlüdür.(ilkini bulmak için
+
+        // NOT: idnexOf ve lastIndexOf aradığını bulamzsa -1 döner.
+        if(text.indexOf("Şeyma") == -1){
+            document.write("<br> aradığınız kelime bulunamadı");
+        }
+        else{
+            document.write("<br> aradığınız kelime bulundu");
+        }
+
+
+        document.write("<hr> <br> <h4>slice() , substring() , substr ve replace() metodları: </h4> ");
+        document.write("<br> İLK HALİ : "+text+"<br>"); // -> ilk hali
+        
+        document.write("<br>"+text.slice(0,11)); // ilk değer küçük olmalı
+        document.write("<br>"+text.slice(-7,-1)); // slice negatif değerde alabiliyor
+        document.write("<br>"+text.substring(8,7)); // aralık belirtiyorsun ve kesiyor negatif değer yok(baştan karakter ile başlar)
+        document.write("<br>"+text.substr(5,8)); // seçilen değer ve sonra 1den başlayarak ilerliyor
+
+       
+
+        document.write("<br>"+text.replace("Mehmet","Rençber"))
+        // text metodunu değiştiriyor ama texti sadece burada değiştiriyor.ilk değer önemli
+
+        document.write("<br>"+text.replace(/Mehmet/i,"Rençber")); 
+        // büyük küçük harfe duyarlı olma aynıysa ilkini değiştir.Fark edersen bşataki MEHMET'i değiştirdi
+        document.write("<br>"+text.replace(/Mehmet/gi,"Rençber")); 
+        // büyük küçük harf duyarlı olmayıp + tüm aynı olanları değiştir sadeceilkini değil
+        document.write("<hr>  <h4>charAt() , CharCodeAt() , concat() ve split() metodları: </h4> ");
+
+        var text2 = "Ahmet,Zeynep,Deniz";
+        var text3 = "Davut,Semiha,Beyza";
+        document.write("<br> text2: "+text2);
+        document.write("<br> text3: "+text3);
+        /* // var text2Text3=text2.concat(text3);  bu şekilde birleştir ve başka bir değişkene atayabirlisn.
+        document.write("<br> text2 ve text3: "+text2Text3); */
+    
+        document.write("<br> concat() : "+text2.concat(text3));// sadece burası için yapar bir defa orjinal halleri halır.
+        document.write("<br> charAt() :"+text2.charAt(6));
+        document.write("<br> charCodeAt() : "+text2.charCodeAt(6));
+        document.write('<br> split() kulanımı: "," ile ayırma işlemi yaptık ' );
+        var splitUse = text2.split(",");
+        for(let i = 0; i<splitUse.length; i++){
+            document.write("<br>"+i+".index = "+splitUse[i]);
+        }
+
+
+    
+
+    }
+    
+    
+    </script>
+</body>
+</html>

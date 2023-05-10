@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Number Methods</h3>
+    <input id="key" type="text" placeholder="Please enter key!">
+    <button onclick="numberMethod();">Press me</button>
+    <p id="printMe" ></p>
+    <hr>
+    <p id="numbers"></p>
+    <input style="float: left;" id="enteredNumber">
+    <p id="result"></p> <br><br>
+    <button type="button" onclick="createNumber();">Create number!</button>
+    <button type="button" onclick="TrueOrFalse();">Is it true this result?</button>
+
+
+    <script>
+        var x,y;
+    function createNumber(){
+         x = Math.round(Math.random()*101);
+         y = Math.round(Math.random()*101);
+        document.getElementById("numbers").innerHTML = x +" + " + y +"= ?";
+    }
+
+
+    function TrueOrFalse(){
+       if(!isNaN(document.getElementById("enteredNumber").value)){
+            if(x + y == document.getElementById("enteredNumber").value){
+                alert("Congratulations");
+                document.getElementById("enteredNumber").value = "";
+                createNumber();
+            }
+            else{
+                alert("FALSE ANSWER");
+                document.getElementById("enteredNumber").value = "";
+                createNumber();
+            }
+        }else{
+            alert("lütfen bir sayı giriniz");
+            document.getElementById("enteredNumber").value = "";
+        }
+    }
+
+     
+
+     
+   function numberMethod(){
+    var x = document.getElementById("key").value;
+    
+    
+    if(isNaN(x)){ // isNan -> veritürüne bakmaz içeriğine bakar
+    document.getElementById("printMe").innerHTML = "Lütfen sayı giriniz!!!";
+    }
+    else{
+        document.getElementById("printMe").innerHTML = x;
+    }
+   }
+   
+        function infinity(){
+            var x = 2;
+            var y = 0;
+        while(x != Infinity){
+            x*=x;
+            y+=x+"<br>"; // y nin typeof'u string olduğu için her satırda üzerine eklemiyor
+        }
+            document.write(y);
+            document.write("y'nin veri tipi :"+typeof y);
+        }
+        
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALL JS TYPES</title>
+</head>
+<body>
+    <h2>All js types</h2>
+        <p id="types"></p>
+        <hr>
+    <h2>All js constructor</h2>
+        <p id="types2"></p>
+        <hr>
+    <h2>Array or not Array</h2>
+        <p id="IsArray"></p>
+        <p id="IsArray2"></p>
+    <script>
+        var types =
+        "'Javascript': " + typeof "Javascript" +"<br>"+
+        "7: " +typeof 7 +"<br>"+
+        "8.13: "+typeof 8.13 +"<br>"+
+        "NaN: "+typeof NaN +"<br>"+
+        "True: "+typeof true +"<br>"+
+        "{firstName:'Ümit',lastName:'Rençber'} :"+typeof {firstName:'Ümit',lastName:'Rençber'}+"<br>"+
+        "[2,3,4,6,'ümit']: "+typeof [2,3,4,6,"ümit"] +"<br>"+
+        "new Date(): "+typeof new Date() +"<br>"+
+        "function(): "+typeof function(){} +"<br>"+
+        "null: "+typeof null +"<br>"+
+        "types değişkeni(şuanki): "+typeof types;
+
+
+        document.getElementById("types").innerHTML =types;
+
+        var types2 =
+        "'Javascript': " +  "Javascript".constructor +"<br>"+
+        "7: " + (7).constructor +"<br>"+
+        "8.13: "+ (8.13).constructor +"<br>"+
+        "NaN: "+ NaN.constructor +"<br>"+
+        "True: "+ true.constructor +"<br>"+
+        "{firstName:'Ümit',lastName:'Rençber'} :"+ {firstName:'Ümit',lastName:'Rençber'}.constructor+"<br>"+
+        "[2,3,4,6,'ümit']: "+ [2,3,4,6,"ümit"].constructor +"<br>"+
+        "new Date(): "+ new Date().constructor +"<br>"+
+        "function(): "+ function(){}.constructor +"<br>";
+
+        document.getElementById("types2").innerHTML =types2;
+
+
+    // array kontrol
+        var teams = 2;
+
+        document.getElementById("IsArray").innerHTML = IsArray(teams);
+    // birini yöntem
+        function IsArray(teams){
+           return teams.constructor.toString().indexOf("Array")>-1;
+        }
+
+     // ikinci yöntem -> number mı ona bakmış olduk
+     document.getElementById("IsArray2").innerHTML = IsArray2(teams);
+     function IsArray2(team){
+        return team.constructor === Number;
+     }
+    </script>
+</body>
+</html>
